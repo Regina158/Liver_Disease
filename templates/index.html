@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klasifikasi Penyakit Hati</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+
+<body class="bg-gray-100">
+
+    <div class="container mx-auto mt-10 p-5 bg-white rounded-lg shadow-lg">
+        <h1 class="text-3xl font-semibold mb-5 text-center">Klasifikasi Penyakit Hati</h1>
+
+        <form method="POST">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="mb-4">
+                    <label for="age" class="block text-lg">Age:</label>
+                    <input type="number" name="age" id="age" class="w-full p-2 border border-gray-300 rounded" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="gender" class="block text-lg">Gender:</label>
+                    <select name="gender" id="gender" class="w-full p-2 border border-gray-300 rounded" required>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                    </select>
+                </div>
+
+                <div class="mb-4">
+                    <label for="bilirubin" class="block text-lg">Bilirubin:</label>
+                    <input type="number" step="any" name="bilirubin" id="bilirubin"
+                        class="w-full p-2 border border-gray-300 rounded" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="alkphos" class="block text-lg">Alkphos:</label>
+                    <input type="number" step="any" name="alkphos" id="alkphos"
+                        class="w-full p-2 border border-gray-300 rounded" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="sgpt" class="block text-lg">SGPT:</label>
+                    <input type="number" step="any" name="sgpt" id="sgpt"
+                        class="w-full p-2 border border-gray-300 rounded" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="sgot" class="block text-lg">SGOT:</label>
+                    <input type="number" step="any" name="sgot" id="sgot"
+                        class="w-full p-2 border border-gray-300 rounded" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="albumin" class="block text-lg">Albumin:</label>
+                    <input type="number" step="any" name="albumin" id="albumin"
+                        class="w-full p-2 border border-gray-300 rounded" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="model_choice" class="block text-lg">Model Classification:</label>
+                    <select name="model_choice" id="model_choice" class="w-full p-2 border border-gray-300 rounded"
+                        required>
+                        <option value="naive_bayes">Naive Bayes</option>
+                        <option value="rbfnn">RBFNN</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mt-6 text-center">
+                <button type="submit" class="bg-blue-500 text-white p-3 rounded-lg">Klasifikasikan</button>
+            </div>
+        </form>
+
+        {% if classification %}
+        <div class="mt-6">
+            <h2 class="text-2xl font-semibold">Hasil Klasifikasi:</h2>
+            <p class="text-xl">{{ classification }}</p>
+        </div>
+        {% endif %}
+
+        {% if history %}
+        <div class="mt-6">
+            <h2 class="text-2xl font-semibold">Riwayat Klasifikasi:</h2>
+            <table class="w-full mt-4 table-auto border-collapse">
+                <thead>
+                    <tr>
+                        <th class="border px-4 py-2">Age</th>
+                        <th class="border px-4 py-2">Gender</th>
+                        <th class="border px-4 py-2">Bilirubin</th>
+                        <th class="border px-4 py-2">Alkphos</th>
+                        <th class="border px-4 py-2">SGPT</th>
+                        <th class="border px-4 py-2">SGOT</th>
+                        <th class="border px-4 py-2">Albumin</th>
+                        <th class="border px-4 py-2">Label</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border px-4 py-2">{{ history[0] }}</td>
+                        <td class="border px-4 py-2">{{ history[1] }}</td>
+                        <td class="border px-4 py-2">{{ history[2] }}</td>
+                        <td class="border px-4 py-2">{{ history[3] }}</td>
+                        <td class="border px-4 py-2">{{ history[4] }}</td>
+                        <td class="border px-4 py-2">{{ history[5] }}</td>
+                        <td class="border px-4 py-2">{{ history[6] }}</td>
+                        <td class="border px-4 py-2">{{ history[7] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+
+</html>

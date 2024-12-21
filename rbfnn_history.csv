@@ -1,0 +1,8 @@
+Age,Gender,Bilirubin,Alkphos,SGPT,SGOT,Albumin,Label
+45.0,Male,1.2,85.0,21.5,25.4,3.9,Error: [Errno 2] No such file or directory: 'uploads/Data_Training.csv'
+45.0,Male,1.2,85.0,21.5,25.4,3.9,Error: [Errno 2] No such file or directory: 'uploads/Data_Training.csv'
+45.0,Male,1.2,85.0,21.5,25.4,3.9,Error: [Errno 2] No such file or directory: 'uploads/Data_Training.csv'
+45.0,Female,1.2,84.0,85.0,25.0,4.0,Error: [Errno 2] No such file or directory: 'uploads/Data_Training.csv'
+45.0,Male,1.2,84.0,85.0,25.0,4.0,Error: [Errno 2] No such file or directory: 'uploads/Data_Training.csv'
+45.0,Male,1.2,84.0,85.0,25.0,4.0,Error: [Errno 2] No such file or directory: 'uploads/Data_Training.csv'
+45.0,Male,1.2,84.0,85.0,25.0,4.0,Error: [Errno 2] No such file or directory: 'uploads/Data_Training.csv'
